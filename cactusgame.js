@@ -41,7 +41,7 @@ $(document).ready(function() {
   function updateLog(newString) {
     logNo += 1;
     log.push(logNo + ": " + newString);
-    if (log.length > 5) {
+    if (log.length > 8) {
       log.shift();
     }
     var out = log.join("<br>");
@@ -54,6 +54,9 @@ $(document).ready(function() {
   }
 
   // Functions communicating with parent window
+
+  // Send window settings
+  window.parent.postMessage({"messageType": "SETTING", "options": {"width": 800, "height": 600} });
 
   // Send score to parent window
   $("#submit_score").click( function () {
