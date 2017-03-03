@@ -89,7 +89,11 @@ $(document).ready(function() {
       soil = s.soil;
       score = s.score;
       height = s.height;
-      updateLog();
+      log = s.log;
+      logNo = s.logNo;
+      // Update log without changing values
+      var out = log.join("<br>");
+      $("#log p").replaceWith("<p>" + out + "</p>");
       updateScore();
       $(".cactus").height(height);
     } else if (event.data.messageType === "ERROR") {
