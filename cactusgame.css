@@ -13,7 +13,7 @@ p {
   position: relative;
   height: 280px;
   width: 400px;
-  background-color: #00f0ff;
+  background-color: #ddf0ff;
 }
 
 .logWindow {
@@ -47,7 +47,7 @@ p {
     bottom: 0px;
     height: 100px;
     width: 50px;
-    background-color: #90d090;
+    background-color: #40dd40;
     border-radius: 7px;
 }
 .ground {
