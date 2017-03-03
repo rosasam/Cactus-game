@@ -11,7 +11,7 @@ p {
 .gameWindow {
   float: left;
   position: relative;
-  height: 300px;
+  height: 250px;
   width: 400px;
   background-color: #ddf0ff;
 }
