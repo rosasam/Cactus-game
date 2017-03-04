@@ -15,7 +15,9 @@ $(document).ready(function() {
       $(this).animate({
           height: '+=' + growthRate + 'px',
       });
-      updateLog("You watered the cactus.\nThe cactus grew!");
+      // Kinda ugly hack to put breaks in to the text,
+      // but that's the easiest way to get line breaks into the html
+      updateLog("You watered the cactus.<br/>The cactus grew!");
     }
     else if (salt) {
       // Make cactus shrink :'(
@@ -25,10 +27,10 @@ $(document).ready(function() {
             height: '-=' + growthRate + 'px',
         });
       }
-      updateLog("You put salt on the cactus, why would you do that?");
+      updateLog("You put salt on the cactus,<br />why would you do that?");
     }
     else {
-      updateLog("It's a cactus, obviously.");
+      updateLog("It's a cactus, obviously.<br />");
     }
     updateScore();
   });
@@ -36,13 +38,13 @@ $(document).ready(function() {
   $("#water").click( function () {
     salt = false;
     water = true;
-    updateLog("Equipped water\n");
+    updateLog("Equipped water<br />");
   });
 
   $("#salt").click( function () {
     salt = true;
     water = false;
-    updateLog("Equipped salt\n");
+    updateLog("Equipped salt<br />");
   });
 
   function updateLog(newString) {
