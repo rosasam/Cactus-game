@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var water = false;
-  var soil = false;
+  var salt = false;
   var growthRate = 10
   var score = 0;
   var height = 100;
@@ -15,10 +15,17 @@ $(document).ready(function() {
       $(this).animate({
           height: '+=' + growthRate + 'px',
       });
-      updateLog("The cactus grew!");
+      updateLog("You watered the cactus.\nThe cactus grew!");
     }
-    else if (soil) {
-      updateLog("You put soil on the cactus, but nothing happened...");
+    else if (salt) {
+      // Make cactus shrink :'(
+      if (height > 100) {
+        height -= growthRate
+        $(this).animate({
+            height: '-=' + growthRate + 'px',
+        });
+      }
+      updateLog("You put salt on the cactus, why would you do that?");
     }
     else {
       updateLog("It's a cactus, obviously.");
@@ -27,21 +34,21 @@ $(document).ready(function() {
   });
 
   $("#water").click( function () {
-    soil = false;
+    salt = false;
     water = true;
-    updateLog("Equipped water");
+    updateLog("Equipped water\n");
   });
 
-  $("#soil").click( function () {
-    soil = true;
+  $("#salt").click( function () {
+    salt = true;
     water = false;
-    updateLog("Equipped soil");
+    updateLog("Equipped salt\n");
   });
 
   function updateLog(newString) {
     logNo += 1;
     log.push(logNo + ": " + newString);
-    if (log.length > 8) {
+    if (log.length > 10) {
       log.shift();
     }
     var out = log.join("<br>");
@@ -69,7 +76,7 @@ $(document).ready(function() {
       "messageType": "SAVE",
       "gameState": {
         "water": water,
-        "soil": soil,
+        "salt": salt,
         "score": score,
         "height": height,
         "log": log,
@@ -89,7 +96,7 @@ $(document).ready(function() {
     if(event.data.messageType === "LOAD") {
       var s = event.data.gameState;
       water = s.water;
-      soil = s.soil;
+      salt = s.salt;
       score = s.score;
       height = s.height;
       log = s.log;
