@@ -24,7 +24,7 @@ p {
     margin: 0px;
     position: relative;
     width: 360px;
-    height: 540px;
+    height: 560px;
     background-color: #fff;
 }
 
@@ -33,7 +33,7 @@ p {
     margin: 5px 0px;
 }
 #log {
-  height: 400px;
+  height: 520px;
 }
 .score {
   position: absolute;
