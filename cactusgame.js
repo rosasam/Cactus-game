@@ -65,7 +65,7 @@ $(document).ready(function() {
   // Functions communicating with parent window
 
   // Send window settings
-  window.parent.postMessage({"messageType": "SETTING", "options": {"width": 804, "height": 600} }, "*");
+  window.parent.postMessage({"messageType": "SETTING", "options": {"width": 810, "height": 610} }, "*");
 
   // Send score to parent window
   $("#submit_score").click( function () {

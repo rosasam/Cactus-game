@@ -11,8 +11,8 @@ p {
 .gameWindow {
   float: left;
   position: relative;
-  height: 600px;
-  width: 400px;
+  height: 100%;
+  width: 50%;
   /* Sky color */
   background-color: #f0faff;
 }
@@ -23,8 +23,8 @@ p {
     padding: 20px 20px;
     margin: 0px;
     position: relative;
-    width: 360px;
-    height: 560px;
+    width: 50%;
+    height: 100%;
     background-color: #fff;
 }
 
