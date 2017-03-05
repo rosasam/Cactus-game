@@ -93,7 +93,7 @@ $(document).ready(function() {
     window.parent.postMessage({"messageType": "LOAD_REQUEST"}, "*");
   });
 
-  // Listen for incoming gamestates
+  // Listen for incoming gamestates or error messages
   window.addEventListener("message", function(event) {
     if(event.data.messageType === "LOAD") {
       var s = event.data.gameState;
